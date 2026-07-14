@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ContentFlowSuite — by CliftonAi</title>
+<meta name="description" content="ContentFlowSuite plans, drafts, and publishes on-brand content across every channel — AI-generated, human-supervised. Part of the CliftonAi platform." />
+<link rel="icon" href="/favicon-32.png" type="image/png" />
+<style>
+  :root {
+    --bg: #06090a;
+    --bg-card: #101c17;
+    --border: rgba(233, 240, 236, 0.09);
+    --border-strong: rgba(233, 240, 236, 0.16);
+    --fg: #f3f6f4;
+    --fg-muted: #a7b3ac;
+    --fg-subtle: #74847b;
+    --brand-forest: #0b3d1e;
+    --brand-mid: #1f6b3a;
+    --brand-emerald: #4b9349;
+    --brand-emerald-light: #6bc475;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .glow {
+    position: fixed;
+    top: -280px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 560px;
+    background: radial-gradient(circle at center, rgba(75, 147, 73, 0.35) 0%, rgba(75, 147, 73, 0) 70%);
+    pointer-events: none;
+  }
+  main {
+    position: relative;
+    max-width: 640px;
+    text-align: center;
+  }
+  .icon {
+    width: 56px;
+    height: 60px;
+    margin: 0 auto 28px;
+    display: block;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-card);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-emerald-light);
+  }
+  h1 {
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 24px 0 8px;
+  }
+  .tagline {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--brand-emerald-light);
+    margin: 0 0 20px;
+  }
+  p.desc {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--fg-muted);
+    margin: 0 auto 36px;
+    max-width: 480px;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+  }
+  a.btn-primary {
+    background: var(--brand-emerald);
+    color: #04150a;
+  }
+  a.btn-primary:hover {
+    background: var(--brand-emerald-light);
+  }
+  a.btn-secondary {
+    border: 1px solid var(--border-strong);
+    color: var(--fg);
+  }
+  a.btn-secondary:hover {
+    border-color: var(--brand-emerald);
+    color: var(--brand-emerald-light);
+  }
+  footer {
+    margin-top: 56px;
+    font-size: 13px;
+    color: var(--fg-subtle);
+  }
+  footer a {
+    color: var(--fg-subtle);
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: var(--fg-muted);
+  }
+</style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <main>
+    <img class="icon" src="/logo-icon.png" alt="CliftonAi" />
+    <span class="badge"><span class="dot"></span>In development</span>
+    <h1>ContentFlowSuite</h1>
+    <p class="tagline">Content operations</p>
+    <p class="desc">
+      Plans, drafts, and publishes on-brand content across every channel —
+      AI-generated, human-supervised. We're actively building this one —
+      check back soon, or ask to be notified when it ships.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:hello@cliftonai.com?subject=ContentFlowSuite%20early%20access">Get notified at launch</a>
+      <a class="btn btn-secondary" href="https://cliftonai.com">← Back to CliftonAi</a>
+    </div>
+    <footer>Part of the <a href="https://cliftonai.com">CliftonAi</a> platform</footer>
+  </main>
+</body>
+</html>
