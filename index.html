@@ -8,17 +8,16 @@
 <link rel="icon" href="/favicon-32.png" type="image/png" />
 <style>
   :root {
-    --bg: #06090a;
-    --bg-card: #101c17;
-    --border: rgba(233, 240, 236, 0.09);
-    --border-strong: rgba(233, 240, 236, 0.16);
-    --fg: #f3f6f4;
-    --fg-muted: #a7b3ac;
-    --fg-subtle: #74847b;
-    --brand-forest: #0b3d1e;
+    --bg: #fbfdfc;
+    --bg-card: rgba(255, 255, 255, 0.6);
+    --border: rgba(14, 40, 26, 0.08);
+    --border-strong: rgba(14, 40, 26, 0.15);
+    --fg: #0e1f16;
+    --fg-muted: #46564c;
+    --fg-subtle: #647568;
     --brand-mid: #1f6b3a;
-    --brand-emerald: #4b9349;
-    --brand-emerald-light: #6bc475;
+    --brand-emerald: #2f7a3b;
+    --brand-emerald-bright: #43a047;
   }
   * { box-sizing: border-box; }
   html, body {
@@ -34,21 +33,53 @@
     align-items: center;
     justify-content: center;
     padding: 24px;
+    overflow-x: hidden;
   }
-  .glow {
+  .blob {
     position: fixed;
-    top: -280px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 900px;
-    height: 560px;
-    background: radial-gradient(circle at center, rgba(75, 147, 73, 0.35) 0%, rgba(75, 147, 73, 0) 70%);
+    border-radius: 9999px;
+    filter: blur(70px);
     pointer-events: none;
+    opacity: 0.55;
+  }
+  .blob-a {
+    top: -220px;
+    left: 50%;
+    transform: translateX(-70%);
+    width: 520px;
+    height: 420px;
+    background: radial-gradient(circle at 30% 30%, rgba(67, 160, 71, 0.5), transparent 70%);
+    animation: float 16s ease-in-out infinite;
+  }
+  .blob-b {
+    bottom: -240px;
+    left: 50%;
+    transform: translateX(10%);
+    width: 480px;
+    height: 420px;
+    background: radial-gradient(circle at 60% 40%, rgba(11, 61, 30, 0.35), transparent 70%);
+    animation: float 22s ease-in-out infinite reverse;
+  }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(2%, -3%) scale(1.05); }
   }
   main {
     position: relative;
     max-width: 640px;
     text-align: center;
+    background: var(--bg-card);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 56px 40px;
+    box-shadow: 0 4px 28px rgba(14, 40, 26, 0.06);
+    animation: fade-in-up 700ms ease both;
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   .icon {
     width: 56px;
@@ -61,7 +92,7 @@
     align-items: center;
     gap: 8px;
     border: 1px solid var(--border-strong);
-    background: var(--bg-card);
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 999px;
     padding: 6px 16px;
     font-size: 12px;
@@ -74,7 +105,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--brand-emerald-light);
+    background: var(--brand-emerald-bright);
   }
   h1 {
     font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -88,7 +119,7 @@
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--brand-emerald-light);
+    color: var(--brand-emerald);
     margin: 0 0 20px;
   }
   p.desc {
@@ -113,23 +144,26 @@
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
     cursor: pointer;
   }
   a.btn-primary {
-    background: var(--brand-emerald);
-    color: #04150a;
+    background: var(--brand-emerald-bright);
+    color: #ffffff;
   }
   a.btn-primary:hover {
-    background: var(--brand-emerald-light);
+    background: var(--brand-mid);
+    transform: translateY(-2px);
   }
   a.btn-secondary {
     border: 1px solid var(--border-strong);
     color: var(--fg);
+    background: rgba(255, 255, 255, 0.4);
   }
   a.btn-secondary:hover {
     border-color: var(--brand-emerald);
-    color: var(--brand-emerald-light);
+    color: var(--brand-emerald);
+    transform: translateY(-2px);
   }
   footer {
     margin-top: 56px;
@@ -143,10 +177,14 @@
   footer a:hover {
     color: var(--fg-muted);
   }
+  @media (prefers-reduced-motion: reduce) {
+    *, main { animation: none !important; transition: none !important; }
+  }
 </style>
 </head>
 <body>
-  <div class="glow" aria-hidden="true"></div>
+  <div class="blob blob-a" aria-hidden="true"></div>
+  <div class="blob blob-b" aria-hidden="true"></div>
   <main>
     <img class="icon" src="/logo-icon.png" alt="CliftonAi" />
     <span class="badge"><span class="dot"></span>In development</span>
