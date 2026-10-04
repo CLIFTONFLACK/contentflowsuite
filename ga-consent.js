@@ -22,7 +22,7 @@
 
   var GA_ID = 'G-72BTWXNBSD';
   var KEY = 'gb_consent';
-  var PRIVACY = null;
+  var PRIVACY = "/cookies.html";
 
   /** The only hosts that report to this property. */
   function isTrackedHost(hostname) {
@@ -209,7 +209,7 @@
         'We remember your choice on this device, and you can change it any time with the “Cookie settings” button.');
       if (PRIVACY) {
         text.appendChild(doc.createTextNode(' '));
-        var more = el('a', 'gbc__link', 'Privacy policy');
+        var more = el('a', 'gbc__link', 'Cookies and analytics');
         more.href = PRIVACY;
         text.appendChild(more);
       }
