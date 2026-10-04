@@ -232,7 +232,7 @@ test('the banner links to the privacy policy only where the site has one', () =>
   const b = fakeBrowser({});
   a.init(b.win);
   const links = b.find('gbc__link');
-  const expected = null;
+  const expected = "/cookies.html";
   assert.equal(links.length, expected ? 1 : 0);
   if (expected) assert.equal(links[0].href, expected);
 });

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cookies and analytics — ContentFlowSuite</title>
+<meta name="description" content="What ContentFlowSuite measures with Google Analytics, only if you say yes, and the cookies that sets." />
+<link rel="icon" href="/favicon-32.png" type="image/png" />
+<style>
+  :root {
+    --bg: #fbfdfc;
+    --bg-card: rgba(255, 255, 255, 0.6);
+    --border: rgba(14, 40, 26, 0.08);
+    --border-strong: rgba(14, 40, 26, 0.15);
+    --fg: #0e1f16;
+    --fg-muted: #46564c;
+    --fg-subtle: #647568;
+    --brand-mid: #1f6b3a;
+    --brand-emerald: #2f7a3b;
+    --brand-emerald-bright: #43a047;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body { padding: 24px; overflow-x: hidden; }
+  .blob {
+    position: fixed;
+    border-radius: 9999px;
+    filter: blur(70px);
+    pointer-events: none;
+    opacity: 0.55;
+  }
+  .blob-a {
+    top: -220px;
+    left: 50%;
+    transform: translateX(-70%);
+    width: 520px;
+    height: 420px;
+    background: radial-gradient(circle at 30% 30%, rgba(67, 160, 71, 0.5), transparent 70%);
+  }
+  .blob-b {
+    bottom: -240px;
+    left: 50%;
+    transform: translateX(10%);
+    width: 480px;
+    height: 420px;
+    background: radial-gradient(circle at 60% 40%, rgba(11, 61, 30, 0.35), transparent 70%);
+  }
+  main {
+    position: relative;
+    max-width: 680px;
+    margin: 24px auto;
+    background: var(--bg-card);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 48px 40px;
+    box-shadow: 0 4px 28px rgba(14, 40, 26, 0.06);
+  }
+  .icon { width: 40px; height: 43px; display: block; margin: 0 0 20px; }
+  h1 {
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+  h2 {
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 32px 0 8px;
+  }
+  p { font-size: 16px; line-height: 1.7; color: var(--fg-muted); margin: 0 0 12px; }
+  p.updated { font-size: 13px; color: var(--fg-subtle); }
+  code { background: rgba(14, 40, 26, 0.06); border-radius: 4px; padding: 1px 5px; font-size: 14px; }
+  a { color: var(--brand-mid); text-underline-offset: 2px; }
+  a:hover { color: var(--brand-emerald); }
+  a:focus-visible { outline: 2px solid var(--brand-emerald-bright); outline-offset: 2px; border-radius: 2px; }
+  .back { display: inline-block; margin-bottom: 24px; font-size: 14px; font-weight: 500; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--fg-subtle); }
+  footer a { color: var(--fg-subtle); }
+  @media (max-width: 520px) { main { padding: 32px 20px; border-radius: 20px; } }
+</style>
+</head>
+<body>
+  <div class="blob blob-a" aria-hidden="true"></div>
+  <div class="blob blob-b" aria-hidden="true"></div>
+  <main>
+    <img class="icon" src="/logo-icon.png" alt="CliftonAi" />
+    <a class="back" href="/">&larr; Back to ContentFlowSuite</a>
+    <h1>Cookies and analytics</h1>
+    <p class="updated">Last updated: 4 October 2026.</p>
+
+    <h2>Who runs this site</h2>
+    <p>ContentFlowSuite is a GetBrian product (<a href="https://getbrian.xyz">getbrian.xyz</a>). Questions about this notice or your data: <a href="mailto:contentflow@getbrian.xyz">contentflow@getbrian.xyz</a>.</p>
+
+    <h2>What we measure, and only if you say yes</h2>
+    <p>If you press Accept in the cookie banner, we use Google Analytics 4 to count visits to flow.getbrian.xyz: which pages are viewed, roughly where from (country level), device and browser type, and how you arrived (the site that referred you, reduced to its address). We use it to see which pages are useful. Nothing is sent to Google before you accept. Pages measured: the website pages on flow.getbrian.xyz. This notice page is never measured.</p>
+
+    <h2>What we switch off</h2>
+    <p>Advertising features, ad personalisation and Google signals are off. The address of each page is sent without its query string (except campaign tags that start with utm_) and without any fragment. Referrers from this same site are not sent.</p>
+
+    <h2>Cookies</h2>
+    <p>Accepting sets these on this site only (not shared with other GetBrian sites): <code>_ga</code> and <code>_ga_&lt;container id&gt;</code> (tell visits apart; Google Analytics keeps them up to 2 years). Your choice itself is stored in your browser&rsquo;s local storage under <code>gb_consent</code> (&ldquo;granted&rdquo; or &ldquo;denied&rdquo;), not in a cookie, and never leaves your device. Declining sets no analytics cookies.</p>
+
+    <h2>Changing your mind</h2>
+    <p>Use the &ldquo;Cookie settings&rdquo; button on the home page at any time. Choosing Decline switches the tag off and deletes the analytics cookies immediately.</p>
+
+    <h2>Google</h2>
+    <p>Google acts as our processor for analytics; data may be processed outside the UK/EEA under Google&rsquo;s safeguards. Data retention in Google Analytics is set to 14 months. See Google&rsquo;s own policy at <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>.</p>
+
+    <h2>Other data</h2>
+    <p>This site has no forms, sign-in or uploads. If you email us at <a href="mailto:contentflow@getbrian.xyz">contentflow@getbrian.xyz</a> (for example to be notified at launch), we receive your email address and whatever you write. Contact us at the same address about any other data.</p>
+
+    <footer>Part of the <a href="https://cliftonai.co">CliftonAi</a> platform</footer>
+  </main>
+</body>
+</html>
