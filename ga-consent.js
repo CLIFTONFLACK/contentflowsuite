@@ -66,15 +66,15 @@
 
   var CSS =
     '.gbc{position:fixed;z-index:2147483000;left:16px;right:16px;bottom:16px;max-width:448px;box-sizing:border-box;' +
-    'padding:20px 20px max(20px,env(safe-area-inset-bottom));background:#fff;color:#14172b;border:1px solid rgba(20,23,43,.18);' +
+    'max-height:calc(100vh - 32px);overflow:auto;padding:20px 20px max(20px,env(safe-area-inset-bottom));background:#fff;color:#14172b;border:1px solid rgba(20,23,43,.18);' +
     'border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.25);font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}' +
     '@media(min-width:640px){.gbc{left:auto}}' +
     '.gbc *{box-sizing:border-box}' +
-    '.gbc__title{margin:0 0 4px;font-size:17px;font-weight:700;color:#8a6520}' +
+    '.gbc__title{margin:0 0 4px;font:700 17px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:normal;text-transform:none;color:#8a6520}' +
     '.gbc__text{margin:0;color:#454a64}' +
     '.gbc__link{color:#14172b;text-decoration:underline;text-underline-offset:2px}' +
     '.gbc__row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}' +
-    '.gbc__btn{min-height:48px;padding:0 16px;border-radius:999px;font:600 16px/1 inherit;cursor:pointer;border:1px solid #8a6520;background:#fff;color:#8a6520}' +
+    '.gbc__btn{min-height:48px;padding:0 16px;border-radius:999px;font:600 16px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer;border:1px solid #8a6520;background:#fff;color:#8a6520}' +
     '.gbc__btn:hover{background:#f3f4f6}' +
     '.gbc__btn--yes{background:#ba8b32;border-color:#ba8b32;color:#14172b}' +
     '.gbc__btn--yes:hover{background:#a87b2a}' +
@@ -128,7 +128,8 @@
     function cleanReferrer() {
       try {
         var r = new URL(doc.referrer);
-        if (r.origin !== loc.origin) return r.origin;
+        var bare = function (x) { return x.replace(/^www\./, ''); };
+        if (r.origin !== loc.origin && bare(r.hostname) !== bare(loc.hostname)) return r.origin;
       } catch (e) { /* no referrer */ }
       return '';
     }

@@ -152,6 +152,14 @@ test('an external referrer is reduced to its origin', () => {
   assert.equal(calls(b).find((x) => x[0] === 'config')[2].cookie_domain, LIVE, 'cookies are host-only');
 });
 
+test('a referrer from the www or bare form of the same host counts as same-site', () => {
+  const other = LIVE.indexOf('www.') === 0 ? LIVE.slice(4) : 'www.' + LIVE;
+  const b = fakeBrowser({ referrer: 'https://' + other + '/page?x=1' });
+  a.init(b.win);
+  b.find('gbc__btn')[1].click();
+  assert.equal(calls(b).find((x) => x[0] === 'config')[2].page_referrer, '');
+});
+
 test('a stored Accept loads the tag on the next visit without asking again', () => {
   const b = fakeBrowser({ stored: 'granted' });
   a.init(b.win);
