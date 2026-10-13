@@ -8,9 +8,9 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/icon.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/fonts/fonts.css" />
 <style>
   :root {
     --navy: #0A1D3B;
@@ -57,16 +57,13 @@
     <p>ContentFlowSuite is a GetBrian product (<a href="https://getbrian.xyz">getbrian.xyz</a>). Questions about this notice or your data: <a href="mailto:contentflow@getbrian.xyz">contentflow@getbrian.xyz</a>.</p>
 
     <h2>What we measure, and only if you say yes</h2>
-    <p>If you press Accept in the cookie banner, we use Google Analytics 4 to count visits to flow.getbrian.xyz: which pages are viewed, roughly where from (country level), device and browser type, and how you arrived (the site that referred you, reduced to its address). We use it to see which pages are useful. No analytics data is sent to Google before you accept. Pages measured: the website pages on flow.getbrian.xyz. This notice page is never measured.</p>
+    <p>If you press Accept in the cookie banner, we use Google Analytics 4 to count visits to flow.getbrian.xyz: which pages are viewed, roughly where from (country level), device and browser type, and how you arrived (the site that referred you, reduced to its address). We use it to see which pages are useful. Nothing is sent to Google before you accept. Pages measured: the website pages on flow.getbrian.xyz. This notice page is never measured.</p>
 
     <h2>What we switch off</h2>
     <p>Advertising features, ad personalisation and Google signals are off. The address of each page is sent without its query string (except campaign tags that start with utm_) and without any fragment. Referrers from this same site are not sent.</p>
 
     <h2>Cookies</h2>
     <p>Accepting sets these on this site only (not shared with other GetBrian sites): <code>_ga</code> and <code>_ga_&lt;container id&gt;</code> (tell visits apart; Google Analytics keeps them up to 2 years). Your choice itself is stored in your browser&rsquo;s local storage under <code>gb_consent</code> (&ldquo;granted&rdquo; or &ldquo;denied&rdquo;), not in a cookie, and never leaves your device. Declining sets no analytics cookies.</p>
-
-    <h2>Fonts and icons, loaded regardless of your choice</h2>
-    <p>When a page loads, your browser fetches its typefaces (DM Sans and Space Grotesk) from Google Fonts, and a few small logo icons from simpleicons.org. Those providers receive your IP address and browser type as part of that request, whatever you choose in the cookie banner. They set no cookies for us and are separate from analytics.</p>
 
     <h2>Changing your mind</h2>
     <p>Use the &ldquo;Cookie settings&rdquo; button on the home page at any time. Choosing Decline switches the tag off and deletes the analytics cookies immediately.</p>
