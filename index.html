@@ -9,13 +9,27 @@
 <!-- Same generated GetBrian icons the CRM serves. The .ico is here as well as the
      PNG because Vercel's dashboard looks for /favicon.ico at the domain root — the
      CRM has no .ico, which is why it shows blank in the project list. -->
-<link rel="icon" href="favicon.ico" sizes="32x32" />
-<link rel="icon" href="icon.png" sizes="32x32" type="image/png" />
+<link rel="canonical" href="https://flow.getbrian.xyz/" />
+<link rel="icon" href="favicon.ico" sizes="48x48" />
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="icon-512.png" sizes="512x512" type="image/png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" type="image/png" />
+<!-- Share card: same 1200x630 layout as getbrian.xyz and DealMaker. Regenerate with
+     scripts/gen-og.mjs (see its header for how to borrow sharp). -->
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="GetBrian ContentFlow" />
+<meta property="og:url" content="https://flow.getbrian.xyz/" />
 <meta property="og:title" content="ContentFlow, built by Brian" />
 <meta property="og:description" content="One WordPress plugin instead of a theme, a writer, an automation tool and a feedback tool. Free on WordPress.org." />
+<meta property="og:image" content="https://flow.getbrian.xyz/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="GetBrian ContentFlow. One WordPress plugin. Not four subscriptions." />
 <meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ContentFlow, built by Brian" />
+<meta name="twitter:description" content="One WordPress plugin instead of a theme, a writer, an automation tool and a feedback tool. Free on WordPress.org." />
+<meta name="twitter:image" content="https://flow.getbrian.xyz/og-image.png" />
 <link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/fonts/fonts.css" />
@@ -35,9 +49,10 @@
     --gold-deep: #8A6520;     /* the only gold that may be small text on white */
     --gold-light: #E0B84F;    /* navy grounds only */
     --paper: #FFFFFF;
-    --paper-panel: #F2F3F5;
+    --paper-panel: #F3F4F6;   /* getbrian.xyz --bg-panel */
     --ink: #14172B;
-    --ink-muted: #5B6178;
+    --ink-muted: #454A64;     /* getbrian.xyz --fg-muted; the CRM, DealMaker and Healthy use the same value */
+    --ink-subtle: #6B7089;    /* getbrian.xyz --fg-subtle: legal line only */
     --border: rgba(20, 23, 43, 0.14);
     --rule: rgba(10, 29, 59, 0.12);
     --shadow: rgba(20, 23, 43, 0.08);
@@ -150,7 +165,7 @@
     display: inline-flex; align-items: center;
     font-family: var(--font-display); font-weight: 500;
     font-size: 1.4rem; letter-spacing: -0.025em; line-height: 1;
-    color: #454A64; white-space: nowrap;
+    color: var(--ink-muted); white-space: nowrap;
     margin-left: -0.6rem; /* cancels .lockup's gap so the bar sits 0.5rem each side */
   }
   .product-tag::before {
@@ -596,6 +611,26 @@
   .built-by:hover { border-color: var(--navy); color: var(--navy); }
   .built-by img { height: 20px; width: auto; }
   .built-by b { font-family: var(--font-display); font-weight: 600; color: var(--navy); }
+  /* Sibling band: every other Brian product footer links the rest of the estate
+     (CRM "More from Brian", DealMaker "Brian built these too", DiffDoc "More Brian
+     builds"); this page did not link any of them. Plain names in ink, as on
+     getbrian.xyz's own footer. */
+  .foot-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 0.25rem; }
+  .foot-links a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 0.5rem;
+    border-radius: 0.5rem; text-decoration: none; color: var(--ink-muted); font-weight: 500;
+    transition: color 200ms ease, background-color 200ms ease;
+  }
+  .foot-links a:hover { color: var(--navy); background: rgba(10, 29, 59, 0.05); }
+  .foot-legal {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 0.9rem;
+    margin-top: 1rem; font-size: 0.78rem; color: var(--ink-subtle);
+  }
+  .foot-legal a {
+    display: inline-flex; align-items: center; min-height: 44px;
+    color: inherit; text-decoration: none; text-underline-offset: 2px;
+  }
+  .foot-legal a:hover { color: var(--ink); text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -983,8 +1018,17 @@
       <img src="brand/brian-mark-compact.svg" alt="" aria-hidden="true" />
       <span>Built by <b>GetBrian</b></span>
     </a>
-    <span>For UK small businesses and the people who write for them</span>
+    <nav class="foot-links" aria-label="More from Brian">
+      <a href="https://crm.getbrian.xyz">CRM</a>
+      <a href="https://diffdoc.getbrian.xyz">DiffDoc</a>
+      <a href="https://dealmaker.getbrian.xyz">DealMaker</a>
+      <a href="https://getbrian.xyz">See the lot</a>
+    </nav>
     <span>GPL-2.0-or-later · Free on WordPress.org</span>
+  </div>
+  <div class="wrap foot-legal">
+    <span>© 2026 Brian. All rights reserved.</span>
+    <span>For UK small businesses and the people who write for them</span>
     <a href="/cookies.html">Cookies and analytics</a>
   </div>
 </footer>
