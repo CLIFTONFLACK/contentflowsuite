@@ -5,110 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cookies and analytics — ContentFlowSuite</title>
 <meta name="description" content="What ContentFlowSuite measures with Google Analytics, only if you say yes, and the cookies that sets." />
-<link rel="icon" href="/favicon-32.png" type="image/png" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/icon.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #fbfdfc;
-    --bg-card: rgba(255, 255, 255, 0.6);
-    --border: rgba(14, 40, 26, 0.08);
-    --border-strong: rgba(14, 40, 26, 0.15);
-    --fg: #0e1f16;
-    --fg-muted: #46564c;
-    --fg-subtle: #647568;
-    --brand-mid: #1f6b3a;
-    --brand-emerald: #2f7a3b;
-    --brand-emerald-bright: #43a047;
+    --navy: #0A1D3B;
+    --navy-soft: #24497F;
+    --navy-bright: #35629F;
+    --gold: #BA8B32;
+    --gold-deep: #8A6520;
+    --paper: #FFFFFF;
+    --paper-panel: #F2F3F5;
+    --ink: #14172B;
+    --ink-muted: #5B6178;
+    --border: rgba(20, 23, 43, 0.14);
+    --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: light;
   }
   * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  body { padding: 24px; overflow-x: hidden; }
-  .blob {
-    position: fixed;
-    border-radius: 9999px;
-    filter: blur(70px);
-    pointer-events: none;
-    opacity: 0.55;
-  }
-  .blob-a {
-    top: -220px;
-    left: 50%;
-    transform: translateX(-70%);
-    width: 520px;
-    height: 420px;
-    background: radial-gradient(circle at 30% 30%, rgba(67, 160, 71, 0.5), transparent 70%);
-  }
-  .blob-b {
-    bottom: -240px;
-    left: 50%;
-    transform: translateX(10%);
-    width: 480px;
-    height: 420px;
-    background: radial-gradient(circle at 60% 40%, rgba(11, 61, 30, 0.35), transparent 70%);
-  }
-  main {
-    position: relative;
-    max-width: 680px;
-    margin: 24px auto;
-    background: var(--bg-card);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border);
-    border-radius: 28px;
-    padding: 48px 40px;
-    box-shadow: 0 4px 28px rgba(14, 40, 26, 0.06);
-  }
-  .icon { width: 40px; height: 43px; display: block; margin: 0 0 20px; }
-  h1 {
-    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0 0 8px;
-  }
-  h2 {
-    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 32px 0 8px;
-  }
-  p { font-size: 16px; line-height: 1.7; color: var(--fg-muted); margin: 0 0 12px; }
-  p.updated { font-size: 13px; color: var(--fg-subtle); }
-  code { background: rgba(14, 40, 26, 0.06); border-radius: 4px; padding: 1px 5px; font-size: 14px; }
-  a { color: var(--brand-mid); text-underline-offset: 2px; }
-  a:hover { color: var(--brand-emerald); }
-  a:focus-visible { outline: 2px solid var(--brand-emerald-bright); outline-offset: 2px; border-radius: 2px; }
-  .back { display: inline-block; margin-bottom: 24px; font-size: 14px; font-weight: 500; }
-  footer { margin-top: 40px; font-size: 13px; color: var(--fg-subtle); }
-  footer a { color: var(--fg-subtle); }
-  @media (max-width: 520px) { main { padding: 32px 20px; border-radius: 20px; } }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  body { padding: 24px 16px; }
+  main { max-width: 680px; margin: 24px auto; padding: 0 0 24px; }
+  .icon { height: 36px; width: auto; display: block; margin: 0 0 20px; }
+  h1 { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 8px; }
+  h2 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin: 32px 0 8px; }
+  p { font-size: 16px; line-height: 1.7; color: var(--ink); margin: 0 0 12px; }
+  p.updated { font-size: 13px; color: var(--ink-muted); }
+  code { background: var(--paper-panel); border-radius: 4px; padding: 1px 5px; font-size: 14px; }
+  a { color: var(--navy-soft); text-underline-offset: 2px; }
+  a:hover { color: var(--navy); }
+  a:focus-visible { outline: 2px solid var(--navy-bright); outline-offset: 2px; border-radius: 2px; }
+  .back { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 8px; font-size: 14px; font-weight: 500; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink-muted); }
+  footer a { color: var(--ink-muted); }
+  @media (max-width: 520px) { body { padding: 16px; } }
 </style>
 </head>
 <body>
-  <div class="blob blob-a" aria-hidden="true"></div>
-  <div class="blob blob-b" aria-hidden="true"></div>
   <main>
-    <img class="icon" src="/logo-icon.png" alt="GetBrian" />
+    <img class="icon" src="/brand/brian-mark-compact.svg" alt="GetBrian" />
     <a class="back" href="/">&larr; Back to ContentFlowSuite</a>
     <h1>Cookies and analytics</h1>
-    <p class="updated">Last updated: 4 October 2026.</p>
+    <p class="updated">Last updated: 13 October 2026.</p>
 
     <h2>Who runs this site</h2>
     <p>ContentFlowSuite is a GetBrian product (<a href="https://getbrian.xyz">getbrian.xyz</a>). Questions about this notice or your data: <a href="mailto:contentflow@getbrian.xyz">contentflow@getbrian.xyz</a>.</p>
 
     <h2>What we measure, and only if you say yes</h2>
-    <p>If you press Accept in the cookie banner, we use Google Analytics 4 to count visits to flow.getbrian.xyz: which pages are viewed, roughly where from (country level), device and browser type, and how you arrived (the site that referred you, reduced to its address). We use it to see which pages are useful. Nothing is sent to Google before you accept. Pages measured: the website pages on flow.getbrian.xyz. This notice page is never measured.</p>
+    <p>If you press Accept in the cookie banner, we use Google Analytics 4 to count visits to flow.getbrian.xyz: which pages are viewed, roughly where from (country level), device and browser type, and how you arrived (the site that referred you, reduced to its address). We use it to see which pages are useful. No analytics data is sent to Google before you accept. Pages measured: the website pages on flow.getbrian.xyz. This notice page is never measured.</p>
 
     <h2>What we switch off</h2>
     <p>Advertising features, ad personalisation and Google signals are off. The address of each page is sent without its query string (except campaign tags that start with utm_) and without any fragment. Referrers from this same site are not sent.</p>
 
     <h2>Cookies</h2>
     <p>Accepting sets these on this site only (not shared with other GetBrian sites): <code>_ga</code> and <code>_ga_&lt;container id&gt;</code> (tell visits apart; Google Analytics keeps them up to 2 years). Your choice itself is stored in your browser&rsquo;s local storage under <code>gb_consent</code> (&ldquo;granted&rdquo; or &ldquo;denied&rdquo;), not in a cookie, and never leaves your device. Declining sets no analytics cookies.</p>
+
+    <h2>Fonts and icons, loaded regardless of your choice</h2>
+    <p>When a page loads, your browser fetches its typefaces (DM Sans and Space Grotesk) from Google Fonts, and a few small logo icons from simpleicons.org. Those providers receive your IP address and browser type as part of that request, whatever you choose in the cookie banner. They set no cookies for us and are separate from analytics.</p>
 
     <h2>Changing your mind</h2>
     <p>Use the &ldquo;Cookie settings&rdquo; button on the home page at any time. Choosing Decline switches the tag off and deletes the analytics cookies immediately.</p>
